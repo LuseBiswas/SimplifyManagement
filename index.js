@@ -12,7 +12,7 @@ const mongoLink=process.env.LINK||"mongodb+srv://riteshbiswas:riteshbiswas@gener
 
 
 
-app.use(cors( {origin: ['http://localhost:5173']}));
+app.use(cors( {origin: ['https://simplifymanagement-frontend.onrender.com']}));
 
 mongoose.connect(mongoLink, {useNewUrlParser: true});
 
