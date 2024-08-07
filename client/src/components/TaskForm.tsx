@@ -46,19 +46,53 @@ function TaskForm(props: prop) {
                     </Grid>
                     <Grid item xs={12}>
                         <TextField
-                            value={title} type="text" variant="outlined" label={error ? "Required" : "Title"} style={inputStyle}
-                            onChange={(e) => { setTitle(e.target.value); setError(false); }} fullWidth error={error} autoComplete="false"
-                            InputLabelProps={{ style: { color: error ? "orange" : "green" } }}
-                            InputProps={{ style: { color: "black" }, notchedOutline: { borderColor: "green" } }}
-                        />
+  value={title}
+  type="text"
+  variant="outlined"
+  label={error ? "Required" : "Title"}
+  style={inputStyle}
+  onChange={(e) => {
+    setTitle(e.target.value);
+    setError(false);
+  }}
+  fullWidth
+  error={error}
+  autoComplete="false"
+  InputLabelProps={{ style: { color: error ? "orange" : "green" } }}
+  InputProps={{
+    style: { color: "black" },
+    sx: {
+      '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'green',
+      },
+    },
+  }}
+/>
                     </Grid>
                     <Grid item xs={12}>
                         <TextField
-                            value={desc} type="text" variant="outlined" label={error ? "Required" : "Description"} style={inputStyle}
-                            onChange={(e) => { setDesc(e.target.value); setError(false); }} fullWidth multiline rows={5} error={error} autoComplete="false"
-                            InputLabelProps={{ style: { color: error ? "orange" : "green" } }}
-                            InputProps={{ style: { color: "black" }, notchedOutline: { borderColor: "green" } }}
-                        />
+              value={desc}
+              type="text"
+              variant="outlined"
+              label={error ? "Required" : "Description"}
+              style={inputStyle}
+              onChange={(e) => {
+                setDesc(e.target.value);
+                setError(false);
+              }}
+              fullWidth
+              multiline
+              rows={5}
+              error={error}
+              autoComplete="false"
+              InputLabelProps={{ style: { color: error ? "orange" : "green" } }}
+              InputProps={{
+                style: { color: "black" },
+                classes: {
+                  notchedOutline: error ? "red" : "Green",
+                },
+              }}
+            />
                     </Grid>
                     <Grid item xs={12}>
                         <Button
